@@ -2,3 +2,156 @@
 Author: Sebastian Andersen;
 Author Website: https://www.sandersen.co
 */
+
+:root {
+  /* Farve Variabler */
+  --tema-farve: #ffffff;
+  --positiv-tekst-farve: #333333;
+  --negativ-tekst-farve: #ffffff;
+  --footer-farve: #999999;
+  /* Font variabler */
+  --hoved-font: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--hoved-font);
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--tema-farve);
+  font-style: italic;
+}
+
+header>nav {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px;
+}
+
+header h1 {
+  display: inline-block;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+header a {
+  color: var(--positiv-tekst-farve);
+  text-decoration: none;
+  line-height: 1;
+}
+
+nav>div.burger {
+  display: none;
+  width: 58px;
+  padding: 12px 8px 12px 0;
+  cursor: pointer;
+}
+
+.burger>span {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: var(--positiv-tekst-farve);
+}
+
+nav>ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  text-transform: capitalize;
+  padding: 0;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+nav li:first-child>a {
+  margin-left: 0;
+}
+
+nav li:last-child>a {
+  margin-right: 0;
+}
+
+nav li>a {
+  margin: 4px 16px;
+  padding: 4px 0 4px 4px;
+  position: relative;
+}
+
+nav li>a::after {
+  display: block;
+  content: "0";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: transparent;
+  width: 100%;
+  height: 6px;
+  background-color: var(--positiv-tekst-farve);
+  transform: translateY(-14px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 120ms;
+  transition-timing-function: ease-in-out;
+}
+
+nav li>a:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media only screen and (max-device-width: 800px) {
+  header>nav {
+    padding: 0;
+  }
+  nav>div.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav>div {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    z-index: 1;
+    background-color: var(--tema-farve);
+    padding: 8px 0 8px 8px;
+  }
+  nav>ul {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    top: 100%;
+    transform: translateY(-110%);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    padding: 16px 0 16px 12px;
+    margin: 0;
+    background-color: var(--tema-farve);
+  }
+  nav>ul.active {
+    transform: translateY(0);
+  }
+  nav li {
+    margin: 4px 0;
+  }
+  nav li>a {
+    margin: 4px 0;
+  }
+}

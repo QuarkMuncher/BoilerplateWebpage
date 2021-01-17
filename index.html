@@ -2,21 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-    <!-- LINKS: -->
-    <link rel="stylesheet" href="./base.css">
+  <!-- LINKS: -->
+  <link rel="stylesheet" href="./base.css">
 </head>
 
 <body>
-    <!-- NAVIGATION: -->
+  <!-- NAVIGATION: -->
+  <header>
+    <nav>
+      <div class="brand">
+        <a href="#">
+          <h1>
+            {BRAND}
+          </h1>
+        </a>
+      </div>
+      <div class="burger" onclick="burgerMenuToggle()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav">
+        <li><a href="#">{PLACEHOLDER}</a></li>
+        <li><a href="#">{PLACEHOLDER}</a></li>
+        <li><a href="#">{PLACEHOLDER}</a></li>
+        <li><a href="#">{PLACEHOLDER}</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- CONTENT: -->
+  <!-- CONTENT: -->
 
-    <!-- FOOTER: -->
+  <!-- FOOTER: -->
 
+  <!-- SCRIPTS: -->
+  <script src="./animations.js"></script>
 </body>
 
 </html>
